@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Class Activity 2</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="wts.css">
+  <link rel="icon" type="image/x-icon" href="Logo_last.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+MX:wght@100..400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <audio id="cheers" >
+    <source src="cheers.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="points" src="Points.mp3"></audio>
+  <audio id="fail" src="fail.mp3"></audio>
+  <div class="header" style="width:100%; box-shadow:5px 5px 10px rgb(0, 0, 0); padding-bottom:10px;">
+    <img src="Logo.png" width="5%" style="float:left; margin-top:25px;" class="img-responsive">
+    <span> <img src="header.png" width="30%" height="100px" class="img-responsive"></span>
+</div>
+<br>
+<br>
+  <center>
+  <h1 id="heading">Integers</h1>
+  <div class="container">
+
+    <button onclick="abc(1)" class="smallbtn">Q1</button>
+    <button onclick="abc(2)" class="smallbtn">Q2</button>
+    <button onclick="abc(3)" class="smallbtn">Q3</button>
+    <button onclick="abc(4)" class="smallbtn">Q4</button>
+    <button onclick="abc(5)" class="smallbtn">Q5</button>
+    <button onclick="abc(6)" class="smallbtn">Q6</button>
+    <button onclick="abc(7)" class="smallbtn">Q7</button>
+    <button onclick="abc(8)" class="smallbtn">Q8</button>
+    <button onclick="abc(9)" class="smallbtn">Q9</button> 
+    <button onclick="abc(10)" class="smallbtn">Q10</button>
+    <button onclick="abc(11)" class="smallbtn">Q11</button>
+    <button onclick="abc(12)" class="smallbtn">Q12</button>
+    <button onclick="abc(13)" class="smallbtn">Q13</button>
+    <button onclick="abc(14)" class="smallbtn">Q14</button>
+    <button onclick="abc(15)" class="smallbtn">Q15</button>
+    <button onclick="abc(16)" class="smallbtn">Q16</button>
+    <button onclick="abc(17)" class="smallbtn">Q17</button>
+    <button onclick="abc(18)" class="smallbtn">Q18</button>
+    <button onclick="abc(19)" class="smallbtn">Q19</button> 
+    <button onclick="abc(20)" class="smallbtn">Q20</button>
+    <button onclick="abc(21)" class="smallbtn">Q21</button>
+    <button onclick="abc(22)" class="smallbtn">Q22</button>
+    <button onclick="abc(23)" class="smallbtn">Q23</button> 
+    <button onclick="abc(24)" class="smallbtn">Q24</button>
+    <button onclick="abc(25)" class="smallbtn">Q25</button>
+    <button onclick="abc(26)" class="smallbtn">Q26</button>
+    <button onclick="abc(27)" class="smallbtn">Q27</button>
+    <button onclick="abc(28)" class="smallbtn">Q28</button> 
+    <button onclick="abc(29)" class="smallbtn">Q29</button>
+    <button onclick="abc(30)" class="smallbtn">Q30</button>
+
+    </div>
+  <div class="maindiv container">
+    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 " tyle='font-size:25px; color:black; font-family:Georgia;'>
+      <p id="numdiv"></p>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 imgdiv">
+      <img id ="math_ques" src="MAth Question.jpg" width="100%">
+    </div>
+  <div id="questiondiv" class="col-lg-7 col-md-7 col-sm-7 col-xs-8">
+    <div id="question"></div>
+    <br>
+  <div class="menu" id="menu1"><br><ul id="options"></ul></div>
+  <button id="subbtn" class="btn btn-success" onclick="checkAnswer()">Submit Answer</button>
+  <button id="nextbtn" class="btn btn-primary" onclick="newques()" style="display:none">Next</button>
+  <p id="result"></p>
+  </div>
+</div>
+  <script>
+    // Define an array of questions and their options
+    
+    var questions = [
+    
+    {
+      questionNo: "Q1.",
+      question: "Q1. Elias marks the origin at 0 and moves 7 steps right on the number line. What integer does she land on?",
+      options: ["a. 7", "b. -7", "c. 6", "d. -6"],
+      answer: "a. 7"
+    },
+
+    {
+      questionNo: "Q2.",
+      question: "Q2. Elias marks the origin at 0 and moves 5 steps left on the number line. What integer does he reach?",
+      options: ["a. -4", "b. 5", "c. 4", "d. -5"],
+      answer: "d. -5"
+    },
+
+    {
+      questionNo: "Q3.",
+      question: "Q3. One of Elias’s students, Max, lives in a building with 9 floors. He is on the 3rd floor and wants to go to the 7th floor. How many floors does he need to ascend to reach the 7th floor?",
+      options: ["a. 3", "b. 4", "c. 5", "d. 6"],
+      answer: "b. 4"
+    },
+
+    
+    {
+      questionNo: "Q4.",
+      question: "Q4. Another student, Alice, lives on the 10th floor of a building. She wished to visit her friend who lives on the 4th floor of the same building. How many floors does Alice need to descend to reach her friend on the 4th floor?",
+
+      options: ["a. 3", "b. 4", "c. 6", "d. 5"],
+      answer: "c. 6"
+    },
+
+    {
+      questionNo: "Q5.",
+      question: "Q5. Where would Elias reach on the number line if he moves 7 steps right from the integer -3?",
+
+      options: ["a. 4","b. 5","c. 6","d. 7"],
+      answer: "d. 7"
+    },
+
+    {
+      questionNo: "Q6.",
+      question: "Q6. Elias asks his students to tell which of the following lists the integers in ascending order.",
+
+      options: ["a. -3, 1, -2, 0, 2", "b. -3, -2, 0, 1, 2", "c. 2, 1, 0, -2, -3", "d. 1, -2, -3, 2, 0"],
+      answer: "b. -3, -2, 0, 1, 2"
+    },
+
+      {
+        questionNo: "Q7.",
+        question: "Q7. Elias asks his students to choose the correct option that lists the integers in descending order.",
+
+        options: ["a. 5, 3, 1, -1, -3", "b. -3, -1, 1, 3, 5", "c. 1, 3, 5, -3, -1", "d. 5, -3, 3, 1, -1"],
+        answer: "a. 5, 3, 1, -1, -3"
+      },
+
+      {
+        questionNo: "Q8.",
+        question: "Q8. Alice asked Elias to help her arrange the integers -11, 14, -13, 12, 0 in ascending order.",
+
+        options: ["a. 14, 12, 0, -11, -13", "b. -13, -11, 0, 12, 14", "c. -11, 0, 12, 14, -13", "d. 12, -13, -11, 0, 14"],
+        answer: "b. -13, -11, 0, 12, 14"
+      },
+
+      {
+        questionNo: "Q9.",
+        question: "Q9. Elias now challenges Alice to arrange the integers 17, -15, 13, 0, -12 in descending order.",
+
+        options: ["a. 17, 13, 0, -12, -15", "b. -15, -12, 0, 13, 17","c. 0, -12, -15, 13, 17","d. 17, -15, 13, -12, 0"],
+
+
+        answer: "a. 17, 13, 0, -12, -15"
+      },
+
+      {
+        questionNo: "Q10.",
+        question: "Q10. Elias is organising his collection of sports cards by their rarity scores. The scores are  -37, 32, -31, 35, -33 He needs to arrange them in descending order to display the rarest cards at the top.<br>Which of the following correctly arranges Elias's sports card scores in descending order?",
+
+        options: ["a. -37, -33, -31, 32, 35", "b. 35, 32, -31, -33, -37", "c. 32, 35, -37, -31, -33", "d. -31, -33, 35, 32, -37"],
+        answer: "b. 35, 32, -31, -33, -37"
+      },
+
+      {
+        questionNo: "Q11.",
+        question: "Q11. One child, Sofia, asked Elias what would be the answer of the equation 114 + (−194) ?",
+
+
+        options: ["a. 308", "b. 80", "c. -80", "d. -308"],
+        answer: "c. -80"
+      },
+
+      {
+        questionNo: "Q12.",
+        question: "Q12. Alice asked Elias what would be the result  of  905 + ( -25.)",
+
+
+        options: ["a. 930","b. 880","c. -880","d. -930"],
+        answer: "b. 880"
+      },
+
+      {
+        questionNo: "Q13.",
+        question: "Q13. Elias challenged his students to solve: 457+(-126).",
+
+        options: ["a. 381","b. -381","c. 582","d. -582"],
+        answer: "a. 381"
+      },
+
+      {
+        questionNo: "Q14.",
+        question: "Q14. Sofia asked Elias what would be the result of the equation -544 +328?",
+
+
+        options: ["a. 872","b. -872","c. 216","d. -216"],
+        answer: "c. 216"
+      },
+
+      {
+        questionNo: "Q15.",
+        question: "Q15. Elias explained to the children that  - 405 + 812 results in:",
+        options: ["a. 1217","b. -1217", "c. 407","d. -407"],
+        answer: "c. 407"
+      },
+
+      {
+        questionNo: "Q16.",
+        question: "Q16. During a maths challenge, Elias asked the children to calculate 685 - (-341). What is the result?",
+
+        options: ["a. 1026", "b. -1026", "c. 344", "d. -344"],
+        answer: "a. 1026"
+      },
+
+      {
+        questionNo: "Q17.",
+        question: "Q17. Elias asked the children to calculate 456 - (-201). What is the result??",
+
+        options: ["a. -657","b. -255","c. 657","d. 255"],
+        answer: "c. 657"
+      },
+
+      {
+        questionNo: "Q18.",
+        question: "Q18. Alice challenged Max to calculate -109 - 401.",
+
+        options: ["a. -510", "b. 292", "c. 510", "d. -292"],
+        answer: "a. -510"
+      },
+
+      {
+        questionNo: "Q19.",
+        question: "Q19. Fill in the missing number.To check his students' understanding Elias asked them to solve  - 870 -739.",
+        options: ["a. -510","b. 1609","c. -1609","d. 510"],
+        answer: "c. -1609"
+      },
+
+      {
+        questionNo: "Q20.",
+        question: "Q20. Which integer serves as the identity element for addition?",
+
+
+        options: ["a. 10","b. 50","c. 0","d. 100"],
+        answer: "c. 0"
+      },
+      {
+        questionNo: "Q21.",
+        question: "Q21. Which of the following statements correctly demonstrates the inverse property of addition for integers?",
+
+
+        options: ["a. 5+0=5","b. 3+(−3)=0","c. 7+(−7)=7","d. 2+2=4"],
+        answer: "b. 3+(−3)=0"
+      },
+      {
+        questionNo: "Q22.",
+        question: "Q22. Elias asks his students which of the following statements correctly illustrates the closure property of addition of integers?",
+
+
+        options: ["a. The sum of any two integers is always a positive integer.","b. The sum of any two integers is always a negative integer.","c. The sum of any two integers is always an integer.","d. The sum of any two integers is always a rational number"],
+        answer: "c. The sum of any two integers is always an integer."
+      },
+      {
+        questionNo: "Q23.",
+        question: "Q23. The students faced a puzzle written on the wall: 'Which additive inverse will come in place of _____ in the given equation to make it 0?'<br>“_____ + 993 = 0 ”",
+
+
+        options: ["a. 993","b. 0","c. -993","d. None of the above"],
+        answer: "c. -993"
+      },
+      {
+        questionNo: "Q24.",
+        question: "Q24. Elias shows this equation 125+ (25 + 40) = (125 + 25) + 40 to his students and asks which property of addition this equation illustrates.",
+
+
+        options: ["a. The commutative property","b. The associative property","c. The closure property","d. The identity property"],
+        answer: "b. The associative property"
+      },
+      {
+        questionNo: "Q25.",
+        question: "Q25. Elias challenged his students with the equation 1257+(−834) - 652. What is the correct solution?",
+
+
+        options: ["a. -1439","b. 229","c. -229","d. 1439"],
+        answer: "c. -229"
+      },
+      {
+        questionNo: "Q26.",
+        question: "Q26. Alice is facing trouble in solving this equation: 820 - 420 - ( - 208). Can you help her in finding the correct answer?",
+        options: ["a. 212","b. 608","c. -608","d. -212"],
+        answer: "b. 608"
+      },
+
+      {
+        questionNo: "Q27.",
+        question: "Q27. One of the students stumbles upon the equation 9007 + (-3002) - 5002. Elias insists he can solve it quickly. Can you figure out the answer to help Elias do the calculations quickly?",
+        options: ["a. 1003","b. 7007","c. -1003","d. -7007"],
+        answer: "a. 1003"
+      },
+
+      {
+        questionNo: "Q28.",
+        question: "Q28. Elias challenged his students with the equation 2099 −154 - (- 782). What is the correct solution?",
+
+
+        options: ["a. -2727","b. 2727","c. 1163","d. T-1163"],
+        answer: "b. 2727"
+      },
+      {
+        questionNo: "Q29.",
+        question: " Q29. Alice challenged Max to calculate 543 - (- 213) + 189.",
+        options: ["a. -945","b. 519","c. 945","d. -519"],
+        answer: "c. 945"
+      },
+
+      {
+        questionNo: "Q30.",
+        question: "Q30. Elias challenged students with the equation <br> 1225 – (−188) + 520. <br> What is the correct solution?",
+        options: ["a. -1993","b. 1557","c. 1993","d. -1557"],
+        answer: "c. 1993"
+      },
+      
+      
+      // Add more questions here
+    ];
+
+    //define the array of images
+
+    var img= ["Assets/1.jpg","Assets/2.jpg","Assets/3.jpg","Assets/4.jpg","Assets/5.jpg","Assets/6.jpg","Assets/7.jpg","Assets/8.jpg","Assets/9.jpg","Assets/10.jpg","Assets/11.jpg","Assets/12.jpg","Assets/13.jpg","Assets/14.jpg","Assets/15.jpg","Assets/16.jpg","Assets/17.jpg","Assets/18.jpg","Assets/19.jpg","Assets/20.jpg","Assets/21.jpg"]
+    
+    // Get a random question from the array
+
+    var randomQuestion = questions[0];
+    var updatedimage = img[0]
+    document.getElementById("math_ques").src = updatedimage
+  
+    document.getElementById("question").innerHTML = randomQuestion.question;
+    
+    randomQuestion.options.forEach(function(option) {
+      var li = document.createElement("li");
+      li.innerHTML = '<input type="radio" name="answer" value="' + option + '"> ' + option;
+      document.getElementById("options").appendChild(li);
+    });
+
+// Create a function here like family array project of Byjus to display next question \
+    // from array everytime instead of random question
+    var i=1;
+    var count=questions.length
+    function newques(){
+      if(i==count){
+        document.getElementById("heading").innerHTML = "Thank You...."
+        document.getElementById("math_ques").src = "last.jpg"
+        document.getElementById("question").innerHTML=""
+        document.getElementById("menu1").style.backgroundColor="white"
+        document.getElementById("options").innerHTML="<b style='font-family:Playwrite MX, cursive; font-size:30px'>Well Done 😊</b> <br>In a vibrant celebration of integers, Elias shared his final lesson, weaving together the rules, properties, and the infinite journey of the number line. With hearts full of gratitude, the villagers carried forth his legacy, forever inspired by the beauty and logic of numbers."
+        document.getElementById("cheers").play()
+        document.getElementById("result").innerHTML ="Click on the next button on the top right corner to practice more"
+      document.getElementById("nextbtn").style.display="none"
+      }
+      else{
+
+      document.getElementById("options").innerHTML=""
+      document.getElementById("result").innerHTML =""
+      
+  
+      updatedimage= img[i]
+      document.getElementById("math_ques").src = updatedimage
+
+// Display the question and options on the page
+      randomQuestion = questions[i];    
+    document.getElementById("question").innerHTML = randomQuestion.question;
+    
+    
+    randomQuestion.options.forEach(function(option) {
+      var li = document.createElement("li");
+      li.innerHTML = '<input type="radio" name="answer" value="' + option + '"> ' + option;
+      document.getElementById("options").appendChild(li);
+    });
+    document.getElementById("subbtn").style.display="inline-block"
+        document.getElementById("nextbtn").style.display="none"
+
+    i++;
+    }
+  }
+    
+    
+    // Check the selected answer against the correct answer
+    function checkAnswer() {
+      var selectedAnswer = document.querySelector('input[name="answer"]:checked').value;
+      if (selectedAnswer === randomQuestion.answer) {
+        document.getElementById("result").innerHTML = "Good Job! &#128512" ;
+        document.getElementById("points").play();
+        document.getElementById("subbtn").style.display="none"
+        document.getElementById("nextbtn").style.display="inline-block"
+      } else {
+        document.getElementById("result").innerHTML = "Try Again 😎!";
+        document.getElementById("fail").play();
+      }
+    }
+
+     
+    function abc(x){
+      i=x-1
+      document.getElementById("options").innerHTML=""
+      document.getElementById("result").innerHTML =""
+      
+  
+      updatedimage= img[i]
+      document.getElementById("math_ques").src = updatedimage
+
+// Display the question and options on the page
+      randomQuestion = questions[i];    
+      document.getElementById("numdiv").innerHTML = randomQuestion.questionNo;
+    document.getElementById("question").innerHTML = randomQuestion.question;
+    
+    
+    randomQuestion.options.forEach(function(option) {
+      var li = document.createElement("li");
+      li.innerHTML = '<input type="radio" name="answer" value="' + option + '"> ' + option;
+      document.getElementById("options").appendChild(li);
+    });
+    document.getElementById("subbtn").style.display="inline-block"
+        document.getElementById("nextbtn").style.display="none"
+
+    i++;
+    }
+  </script>
+</center>
+</body>
+</html>
